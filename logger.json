@@ -1,0 +1,11 @@
+{
+  /* 
+    "error" - show errors only
+    "info" - normal detail
+    "trace" - full detail
+  */
+  "level": "info",
+
+  /* write logs to file? */
+  "file": false
+}

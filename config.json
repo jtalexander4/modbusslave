@@ -1,0 +1,77 @@
+{
+  "version": "3.0.3",
+
+  /* Speficy protocol type: "RTU" or "TCP" */
+  "mode": "TCP",
+
+  /* Serial port settings (for RTU mode only) */
+  "port": {
+    "name": "COM1",
+    "baudRate": 19200,
+    "dataBits": 8,
+    "parity": "none",
+    "stopBits": 1
+  },
+
+  /* Frame Delay Override */
+  /* the amount of time in ms at the end of the frame (null for default) */
+  "frameDelay": null,
+
+  /* TCP port number (for TCP) */
+  "tcpPort": 502,
+
+  "slaves": {
+    "1": {
+      /* An 'online' slave will respond to Modbus requests.  */
+      /* Slaves not listed in this configuration file are offline by default.  */
+      "isOnline": true,
+
+      /* List of registers of the slave. */
+      /* Any registers not listed here have default value of '0' or 'false'. */
+      "registers": {
+
+        /* Setup Holding Registers as decimal numbers */
+        "HR0": 1,
+        "HR1": 2,
+        "HR2": 3,
+
+        /* Use '0x' prefix to specify hexadecimal numbers */
+        "HR10": "0x0A",
+        "HR11": "0x0B",
+        "HR12": "0x0C",
+        "HR13": "0xFFFF",
+        "HR14": "0x1234",
+
+        /* Setup Modbus exception response */
+        "HR999": { "exception": 3 },
+
+        /* Setup Input Registers */
+        "IR1": 1,
+        "IR2": 2,
+
+        /* Setup Coils*/
+        "C0": false,
+        "C1": true,
+
+        /* Setup Discrete Inputs*/
+        "DI1": true,
+        "DI2": false
+      }
+    },
+    "2": {
+      /* When the slave is not online, it will not respond */
+      "isOnline": false,
+      "registers": {
+        "HR1": 1
+      }
+    }
+  },
+
+  /* HTTP API settings */
+  /* use the API to modify configuration at runtime */
+  "api": {
+    /* set to 'true' to enable the API endpoint */
+    "enable": false,
+    "port": 9000
+  }
+}
