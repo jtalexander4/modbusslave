@@ -72,7 +72,7 @@ Visit https://unserver.xyz to learn more.
 
 ## Additional features from forked repo
 
-## Random Value Generator
+### Random Value Generator
 run random_generator.py to randomize the values of each modbus register every so often
 
 ## Please Share and Give Feedback
